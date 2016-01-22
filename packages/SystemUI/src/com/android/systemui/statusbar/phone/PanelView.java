@@ -102,6 +102,20 @@ public abstract class PanelView extends FrameLayout {
         }
     };
 
+    private boolean mUpdateExpandOnLayout;
+    private View.OnLayoutChangeListener mLayoutChangeListener = new OnLayoutChangeListener() {
+        @Override
+        public void onLayoutChange(View v, int left, int top, int right, int bottom,
+                int oldLeft, int oldTop, int oldRight, int oldBottom) {
+            // update expand height
+            if (mHeightAnimator != null && mExpanding && mUpdateExpandOnLayout) {
+                final int maxPanelHeight = getMaxPanelHeight();
+                final PropertyValuesHolder[] values = mHeightAnimator.getValues();
+                values[0].setFloatValues(maxPanelHeight);
+            }
+        }
+    };
+
     /**
      * Whether an instant expand request is currently pending and we are just waiting for layout.
      */
