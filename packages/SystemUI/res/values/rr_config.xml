@@ -51,5 +51,7 @@
     <!-- Doze: alternate schedule -->
     <string name="doze_pulse_schedule_alternate" translatable="false">1s</string>
 
-   
+    <!-- The default number of rows in the QuickSettings -->
+    <integer name="quick_settings_num_rows">3</integer>
+
 </resources>
