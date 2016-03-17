@@ -4774,12 +4774,6 @@ public final class Settings {
         public static final String PA_PIE_ALWAYS_RIGHT = "pa_pie_always_right";
 
         /**
-         * Allows setting the hold back to kill timeout
-         * @hide
-         */
-        public static final String HOLD_BACK_TO_KILL_TIMEOUT = "hold_back_to_kill_timeout";
-
-        /**
          * Timeout for ambient display notification
          * @hide
          */
