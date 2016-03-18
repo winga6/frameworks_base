@@ -595,7 +595,7 @@ public class StatusBarHeaderView extends RelativeLayout implements View.OnClickL
         if (mSignalCluster != null) {
             updateSignalClusterDetachment();
         }
-        mEmergencyCallsOnly.setVisibility(mExpanded && mShowEmergencyCallsOnly ? VISIBLE : GONE);
+        mEmergencyCallsOnly.setVisibility(mExpanded && mShowEmergencyCallsOnly ? View.VISIBLE : View.GONE);
         mBatteryLevel.setForceShown(mExpanded && mShowBatteryTextExpanded);
         mBatteryLevel.setVisibility(View.VISIBLE);        		
         if (mDockBatteryLevel != null) {
@@ -1402,7 +1402,7 @@ public class StatusBarHeaderView extends RelativeLayout implements View.OnClickL
                 final Boolean toggleState = detail.getToggleState();
                 if (detail.getTitle() == R.string.quick_settings_edit_label) {
                     mEditTileDoneText.setVisibility(View.VISIBLE);
-                    mQsDetailHeaderSwitch.setVisibility(INVISIBLE);
+                    mQsDetailHeaderSwitch.setVisibility(View.INVISIBLE);
                     mQsDetailHeader.setClickable(true);
                     mQsDetailHeader.setOnClickListener(new OnClickListener() {
                         @Override
@@ -1411,12 +1411,12 @@ public class StatusBarHeaderView extends RelativeLayout implements View.OnClickL
                         }
                     });
                 } else if (toggleState == null) {
-                    mQsDetailHeaderSwitch.setVisibility(INVISIBLE);
+                    mQsDetailHeaderSwitch.setVisibility(View.INVISIBLE);
                     mEditTileDoneText.setVisibility(View.GONE);
                     mQsDetailHeader.setClickable(false);
                 } else {
                     mEditTileDoneText.setVisibility(View.GONE);
-                    mQsDetailHeaderSwitch.setVisibility(VISIBLE);
+                    mQsDetailHeaderSwitch.setVisibility(View.VISIBLE);
                     mQsDetailHeaderSwitch.setChecked(toggleState);
                     mQsDetailHeader.setClickable(true);
                     mQsDetailHeader.setOnClickListener(new OnClickListener() {
@@ -1436,7 +1436,7 @@ public class StatusBarHeaderView extends RelativeLayout implements View.OnClickL
         private void transition(final View v, final boolean in) {
             if (in) {
                 v.bringToFront();
-                v.setVisibility(VISIBLE);
+                v.setVisibility(View.VISIBLE);
             }
             if (v.hasOverlappingRendering()) {
                 v.animate().withLayer();
@@ -1447,7 +1447,7 @@ public class StatusBarHeaderView extends RelativeLayout implements View.OnClickL
                         @Override
                         public void run() {
                             if (!in) {
-                                v.setVisibility(INVISIBLE);
+                                v.setVisibility(View.INVISIBLE);
                             }
                             mDetailTransitioning = false;
                         }
